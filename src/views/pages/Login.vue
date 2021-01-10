@@ -109,8 +109,9 @@ export default {
     //Function for appLogin and store login info into store
     appLogin(){
       if(this.username && this.password){
+        store.commit("loginUser");
         this.$router.push({ path: "/Dashboard" });
-         store.commit("loginUser");
+         
 
       }else{
          this.msg = "Enter Username and Password"
