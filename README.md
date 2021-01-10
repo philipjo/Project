@@ -10,3 +10,6 @@ npm run serve
 
 # build for production with minification
 npm run build
+
+To Login
+type something as username and password to login
