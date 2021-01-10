@@ -124,10 +124,10 @@ export default {
   data() {
     return {
       headers: [
-        { text: "Customer Name", value: "name", sortable: true },
-        { text: "No. of Items", value: "items" },
-        { text: "Total Amt", value: "amount" },
-        { text: "Status", value: "status",align:"center" }
+        { text: "Customer Name", value: "name", sortable: false },
+        { text: "No. of Items", value: "items",sortable: false },
+        { text: "Total Amt", value: "amount",sortable: false },
+        { text: "Status", value: "status",align:"center",sortable: false }
       ],
 
       orders:[],

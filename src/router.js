@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import axios from 'axios'
-// import store from '@/store'
+import store from '@/store'
 
 Vue.use(Router)
 
@@ -18,7 +18,7 @@ let router = new Router({
     },
     {
       path: '/',
-      redirect: '/dashboard',
+      redirect: '/Dashboard',
       component: () => import('@/layouts/Layout'),
       meta: { requiresAuth: true },
       children: [
@@ -40,18 +40,18 @@ let router = new Router({
 
 router.beforeEach((to, from, next) => {
  
-  // if (to.matched.some(route => route.meta.requiresAuth) && !store.state.isLoggedIn) {
-  //   next({
-  //     name: 'Login'
-  //   })
-  //   return
-  // }
-  // if (to.path === '/Login' && store.state.isLoggedIn) {
-  //   next({
-  //     path: 'Dashboard'
-  //   })
-  //   return
-  // }
+  if (to.matched.some(route => route.meta.requiresAuth) && !store.state.isLoggedIn) {
+    next({
+      name: 'Login'
+    })
+    return
+  }
+  if (to.path === '/Login' && store.state.isLoggedIn) {
+    next({
+      path: 'Dashboard'
+    })
+    return
+  }
   next()
 })
 
