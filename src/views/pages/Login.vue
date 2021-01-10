@@ -41,6 +41,12 @@
                     required
                   ></v-text-field>
                 </v-flex>
+                 
+              </v-layout>
+              <v-layout wrap justify-center>
+                <v-flex xs12 md3 pa-2 text-center>
+                  <span style="font-size: 14px; color: grey">Hint : Type something to Login</span>
+                </v-flex>
               </v-layout>
 
               <v-layout v-if="msg" wrap justify-center>
